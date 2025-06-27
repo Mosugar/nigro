@@ -124,24 +124,25 @@
 /* Button positioned in the white text area on the right */
 .bottomButton {
   position: absolute;
-  bottom: 2rem;
+  bottom: 5.5rem;
   right: 2rem;
   z-index: 15;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 4rem;
   background-color: var(--green);
   color: var(--dark);
   padding: 0.6rem 1.2rem;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 700;
-  font-family: "Sequel Bold", sans-serif;
+  font-family: "Sequel Bold", ;
   cursor: pointer;
   border: none;
   transition: all 0.3s ease;
   text-transform: uppercase;
   white-space: nowrap;
+  
 }
 
 .bottomButton:hover {
@@ -169,6 +170,7 @@
 }
 /* Text layout: only heading and description on left */
 .bottomRow {
+  
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
