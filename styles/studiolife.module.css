@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vh;
   padding: 0;
-  background: linear-gradient(135deg, #555555 0%, #222222 50%, var(--dark) 100%);
+  background: var(--dark) ;
   position: relative;
   overflow: hidden;
 }
@@ -93,8 +93,9 @@
   padding: 3rem 2rem 2rem;
   z-index: 10;
   /* Clipping mask effect */
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);
+  /* -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0); */
+  
 }
 
 .textContainer::before {
@@ -185,24 +186,24 @@
 }
 
 .heading {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: var(--white);
   line-height: 1.1;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   font-family: "Sequel Bold";
   letter-spacing: 1px;
   text-align: left;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #aaa;
   line-height: 1.3;
   font-family: "Nexa Bold", sans-serif;
   margin: 0;
   font-weight: 300;
   text-align: left;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .button {
@@ -211,10 +212,10 @@
 }
 
 /* Gradient backgrounds for each column */
-.col1 { background: linear-gradient(135deg, #48dbfb, #0abde3); }
-.col2 { background: linear-gradient(135deg, #ff6b9d, #c44569); }
-.col3 { background: linear-gradient(135deg, #1dd1a1, #10ac84); }
-.col4 { background: linear-gradient(135deg, #feca57, #ff9f43); }
+.col1 { background: linear-gradient(40deg, #48dbfb, #0abde3); }
+.col2 { background: linear-gradient(40deg, #ff6b9d, #c44569); }
+.col3 { background: linear-gradient(40deg, #1dd1a1, #10ac84); }
+.col4 { background: linear-gradient(40deg, #feca57, #ff9f43); }
 
 /* Responsive design */
 @media (max-width: 1200px) {

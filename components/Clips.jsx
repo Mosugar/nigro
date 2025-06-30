@@ -22,6 +22,12 @@ const Clips = () => {
   };
   const clips = [
     {
+      clip: "https://www.youtube.com/embed/iAKam37eHYM?si=maHdEj2InbZYi-_X",
+    },
+    {
+      clip: "https://www.youtube.com/embed/HYtqFjUIh8Q?si=MfFj-Hnh20_vedha",
+    },
+    {
       clip: "https://www.youtube.com/embed/fWlUmFIdGnA?si=AoUaX3mgeUwhX6Ej",
     },
     {

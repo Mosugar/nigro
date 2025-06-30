@@ -13,12 +13,24 @@ const StudioLife = () => {
     { src: "/studiolife/7.JPG", alt: "Equipment setup" },
     { src: "/studiolife/8.JPG", alt: "Artist performance" },
     { src: "/studiolife/9.JPG", alt: "Artist performance" },
+    { src: "/studiolife/10.JPG", alt: "Studio ambiance" },
+    { src: "/studiolife/11.JPG", alt: "Creative workspace" },
+    { src: "/studiolife/12.JPG", alt: "Studio equipment" },
+    { src: "/studiolife/13.JPG", alt: "Recording session" },
+    { src: "/studiolife/14.JPG", alt: "Artist collaboration" },
+    { src: "/studiolife/15.JPG", alt: "Sound mixing" },
+    { src: "/studiolife/16.JPG", alt: "Studio vibe" },
+    { src: "/studiolife/17.JPG", alt: "Creative process" },
+    { src: "/studiolife/18.JPG", alt: "Studio life" },
+    { src: "/studiolife/19.JPG", alt: "Recording equipment" },
+    { src: "/studiolife/20.JPG", alt: "Studio ambiance" }
+    
   ];
 
   useEffect(() => {
     gsap.to(`.${style.column}`, {
-      y: (index) => (index % 2 === 0 ? -20 : 20),
-      duration: 3,
+      y: (index) => (index % 2 === 0 ? -80 : 20),
+      duration: 4,
       ease: "power2.inOut",
       repeat: -1,
       yoyo: true
@@ -26,7 +38,9 @@ const StudioLife = () => {
   }, []);
 
   return (
-    <div className={style.content} id="studio-life">
+    <>
+      <div style={{ background: "#fff", padding: "50px 0" }}></div>
+      <div className={style.content} id="studio-life">
       <div className={style.container}>
         <div className={style.imageGrid}>
           {studioImages.map((image, index) => (
@@ -58,15 +72,15 @@ const StudioLife = () => {
             </div>
           </div>
           
-          {/* Button positioned in the white text area */}
+          
           <button className={style.bottomButton}>
-            <span>Enter IG</span>
+            <span>Enter IG</span> 
             <div className={style.arrow}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <svg width="80" height="20" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M5 12H19M19 12L12 5M19 12L12 19"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
@@ -75,7 +89,8 @@ const StudioLife = () => {
           </button>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

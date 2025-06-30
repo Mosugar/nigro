@@ -22,6 +22,24 @@ const Tracks = () => {
   };
   const tracks = [
     {
+      track: "https://open.spotify.com/embed/track/6H7g2D6qPuMQtPbgUU4b0p?utm_source=generator"
+    },
+    {
+      track: "https://open.spotify.com/embed/track/5C3ELRGBnth9x69FfKj9dk?utm_source=generator"
+    },
+    {
+      track: "https://open.spotify.com/embed/track/74BHqwtauWi2JYYdeT29ue?utm_source=generator"
+    },
+    {
+      track: "https://open.spotify.com/embed/track/2xNMlZRscen8MP3d7aH5e7?utm_source=generator"
+    },
+    {
+      track: "https://open.spotify.com/embed/track/7sZpukocfCzN4Erg0KlaBE?utm_source=generator"
+    },
+    {
+      track: "https://open.spotify.com/embed/track/4d521I3jDRpewk3Ag6VKpL?utm_source=generator"
+    },
+    {
       track:
         "https://open.spotify.com/embed/track/6NuQTF90fzQhejBAH5JPaK?utm_source=generator&theme=0",
     },
@@ -76,7 +94,7 @@ const Tracks = () => {
     {
       track:
         "https://open.spotify.com/embed/track/6fspOHbnuhJNC3BZyF37on?utm_source=generator&theme=",
-    },
+    }
   ];
   return (
     <div className={style.content} id="tracks">
