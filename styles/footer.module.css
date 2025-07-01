@@ -68,9 +68,6 @@
   font-family: "Nexa bold";
   font-size: 12px;
 }
-/* .links ul li a span:last-child {
-    direction: ltr;
-  } */
 .social ul {
   display: flex;
 }
@@ -78,15 +75,50 @@
   fill: var(--green);
 }
 
+/* Enhanced Map Styling - Rounded Rectangle with Green Border */
 .map {
   width: 100%;
   height: 100%;
   grid-column: span 2 / span 2;
-  background-color: var(--green);
+  background-color: var(--white);
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Enhanced Map Styling - Dark Green Background */
+.map {
+  width: 100%;
+  height: 100%;
+  grid-column: span 2 / span 2;
+  background-color: var(--dark-green);
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enhanced iframe styling */
 .map iframe {
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 3;
+  border-radius: 20px;
+  border: none;
+  filter: contrast(1.1) saturate(1.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for the map */
+.map:hover iframe {
+  /* filter: contrast(1.2) saturate(1.2) brightness(1.05); */
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 1050px) {
@@ -97,6 +129,11 @@
   }
   .map {
     height: 60vh;
+    padding: 15px;
+  }
+  
+  .map iframe {
+    border-radius: 15px;
   }
 }
 
@@ -123,8 +160,14 @@
   }
   .map {
     height: 80vh;
+    padding: 12px;
+  }
+  
+  .map iframe {
+    border-radius: 12px;
   }
 }
+
 @media (max-width: 500px) {
   .right_part {
     padding: 60px 30px;
@@ -139,6 +182,7 @@
     justify-content: space-between;
   }
 }
+
 @media (max-width: 450px) {
   .right_part {
     padding-top: 0;
@@ -150,8 +194,6 @@
     flex-direction: column;
   }
   .social {
-    /* width: max-content;
-          margin: 0 auto; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -163,5 +205,13 @@
   }
   .links {
     padding-bottom: 40px;
+  }
+  
+  .map {
+    padding: 10px;
+  }
+  
+  .map iframe {
+    border-radius: 10px;
   }
 }

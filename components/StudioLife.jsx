@@ -41,54 +41,71 @@ const StudioLife = () => {
     <>
       <div style={{ background: "#fff", padding: "50px 0" }}></div>
       <div className={style.content} id="studio-life">
-      <div className={style.container}>
-        <div className={style.imageGrid}>
-          {studioImages.map((image, index) => (
-            <div 
-              key={index}
-              className={`${style.imageCard} ${style.column} ${style[`col${index % 4 + 1}`]}`}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className={style.studioImage}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              />
-              <div className={style.overlay}></div>
-            </div>
-          ))}
+        {/* Add SVG gradient at the top - same as bottom sections */}
+        <div className={style.svg_top}>
+          <svg
+            id="Layer_1"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1599 71"
+            fill="var(--white)"
+          >
+            <polygon points="0 0 1599 0 1599 71 0 0" />
+          </svg>
         </div>
         
-        <div className={style.textContainer}>
-          <div className={style.textContent}>
-            <div className={style.bottomRow}>
-              <div className={style.leftContent}>
-                <h1 className={style.heading}>Studio Life</h1>
-                <p className={style.description}>
-                  Le son, la vibe, le style. Vis l'expérience WARDDMUSIC
-                </p>
+        <div className={style.container}>
+          <div className={style.imageGrid}>
+            {studioImages.map((image, index) => (
+              <div 
+                key={index}
+                className={`${style.imageCard} ${style.column} ${style[`col${index % 4 + 1}`]}`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className={style.studioImage}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+                <div className={style.overlay}></div>
               </div>
-            </div>
+            ))}
           </div>
           
-          
-          <button className={style.bottomButton}>
-            <span>Enter IG</span> 
-            <div className={style.arrow}>
-              <svg width="80" height="20" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M5 12H19M19 12L12 5M19 12L12 19"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+          <div className={style.textContainer}>
+            <div className={style.textContent}>
+              <div className={style.bottomRow}>
+                <div className={style.leftContent}>
+                  <h1 className={style.heading}>Studio Life</h1>
+                  <p className={style.description}>
+                    Le son, la vibe, le style. Vis l'expérience WARDDMUSIC
+                  </p>
+                </div>
+              </div>
             </div>
-          </button>
+            
+            <a 
+              href="https://www.instagram.com/warddmusic_/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={style.bottomButton}
+            >
+              <span>Enter IG</span> 
+              <div className={style.arrow}>
+                <svg width="80" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );

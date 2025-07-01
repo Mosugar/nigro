@@ -2,9 +2,19 @@
   width: 100%;
   height: 100vh;
   padding: 0;
-  background: var(--dark) ;
+  background: var(--dark);
   position: relative;
   overflow: hidden;
+}
+
+/* Add the same gradient at the top as the one at the bottom */
+.svg_top {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .container {
@@ -143,7 +153,7 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   white-space: nowrap;
-  
+  text-decoration: none;
 }
 
 .bottomButton:hover {
@@ -246,6 +256,11 @@
   .description {
     font-size: 1.1rem;
   }
+  
+  /* Adjust top gradient for medium screens */
+  .svg_top {
+    height: 100px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -268,68 +283,194 @@
     font-size: 1rem;
     max-width: 100%;
   }
+  
+  /* Adjust top gradient for tablets */
+  .svg_top {
+    height: 80px;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Mobile Layout - Complete Redesign */
+  .content {
+    height: auto;
+    min-height: 100vh;
+    padding: 50px 20px;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
   .imageGrid {
-    gap: 0.6rem;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    height: auto;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  /* Show only 2 images - hide the middle one */
+  .imageCard:nth-child(2) {
+    display: none;
+  }
+  
+  .imageCard:nth-child(n+4) {
+    display: none;
+  }
+  
+  .imageCard {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: none; /* Remove all transitions on mobile */
+  }
+  
+  .imageCard:hover {
+    transform: none; /* Remove hover effects */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Keep static shadow */
+  }
+  
+  .studioImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%; /* Focus on upper part where faces usually are */
+    transition: none; /* Remove animation on mobile */
+  }
+  
+  .imageCard:hover .studioImage {
+    transform: none; /* Remove hover scale effect */
+  }
+  
+  /* Specific positioning for the 2 remaining images to show faces better */
+  .imageCard:nth-child(1) .studioImage {
+    object-position: center 30%; /* Adjust for first image */
+  }
+  
+  .imageCard:nth-child(3) .studioImage {
+    object-position: center 25%; /* Adjust for third image (now second visible) */
   }
   
   .textContainer {
-    padding: 1.5rem 1rem 1rem;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    text-align: center;
   }
   
-  .bottomButton {
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
-  }
-  
-  .bottomButton .arrow {
-    width: 30px;
-    height: 30px;
+  .textContainer::before {
+    display: none;
   }
   
   .heading {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-align: center;
   }
   
   .description {
-    font-size: 0.95rem;
-    line-height: 1.2;
-  }
-}
-
-@media (max-width: 576px) {
-  .imageGrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(8, 1fr);
-    gap: 0.4rem;
-    padding: 15px;
+    font-size: 1rem;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 100%;
   }
   
-  .textContainer {
-    padding: 1rem 1rem 1rem;
-  }
-  
+  /* Redesigned Mobile Button */
   .bottomButton {
     position: relative;
     bottom: auto;
     right: auto;
-    margin-top: 1rem;
     width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, var(--green) 0%, #7bc142 100%);
+    color: var(--dark);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(164, 255, 76, 0.3);
+    transition: all 0.3s ease;
+    gap: 1rem;
+  }
+  
+  .bottomButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(164, 255, 76, 0.4);
+    background: linear-gradient(135deg, #7bc142 0%, var(--green) 100%);
+  }
+  
+  .bottomButton span {
+    flex: 1;
+    text-align: center;
+    font-family: "Sequel Bold";
+    letter-spacing: 1px;
+  }
+  
+  .bottomButton .arrow {
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 0.7rem 1rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .bottomButton:hover .arrow {
+    transform: translateX(5px) rotate(45deg);
+    background-color: var(--white);
+    color: var(--dark);
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    padding: 30px 15px;
+  }
+  
+  .imageCard {
+    height: 250px;
+    border-radius: 15px;
   }
   
   .heading {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    position: center;
   }
   
   .description {
     font-size: 0.9rem;
+  }
+  
+  .bottomButton {
+    max-width: 260px;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .bottomButton .arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Smaller top gradient for small mobile */
+  .svg_top {
+    height: 50px;
   }
 }

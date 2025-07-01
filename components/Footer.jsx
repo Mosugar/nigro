@@ -138,7 +138,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <a
-                    href="https://open.spotify.com/playlist/2GznjCPT7BhHuci5z2gLMt?si=039fac172df0428d"
+                    href="https://open.spotify.com/user/314t6ingile3jrokd6pkp5rdjyjm?si=4da048657bb14825"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -196,7 +196,7 @@ const Footer = () => {
                
                 <li>
                   <a
-                    href="https://youtube.com/@omflow1?si=wgU7SbCpPVx3PXpf"
+                    href="https://www.youtube.com/@warddmusic"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
