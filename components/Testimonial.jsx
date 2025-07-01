@@ -854,7 +854,7 @@ const Testimonial = () => {
 
               <div className={style.description}>
                 Espace créatif machi ghir studio!rari talenteux & chab3in
-                passion !! F F F F FALEH
+                passion !! 
               </div>
               <div className={style.bottom}>
                 <div className={style.client}>

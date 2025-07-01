@@ -19,17 +19,17 @@ const Artists = () => {
     { id: "7", name: "ARTIST 7", genre: "Jazz" },
     { id: "8", name: "ARTIST 8", genre: "Trap" },
     { id: "9", name: "ARTIST 9", genre: "Soul" },
-    // { id: "10", name: "ARTIST 10", genre: "Afro" },
+    { id: "18", name: "ARTIST 10", genre: "Afro" },
     { id: "11", name: "ARTIST 11", genre: "Afro" },
     { id: "12", name: "ARTIST 11", genre: "Afro" },
     { id: "13", name: "ARTIST 11", genre: "Afro" },
     { id: "14", name: "ARTIST 11", genre: "rap" },
     { id: "15", name: "ARTIST 11", genre: "Afro" },
     { id: "16", name: "ARTIST 11", genre: "Afro" },
-    // { id: "17", name: "ARTIST 11", genre: "Afro" },
-    // { id: "18", name: "ARTIST 11", genre: "Afro" },
-    // { id: "19", name: "ARTIST 11", genre: "Afro" },
-    // { id: "20", name: "ARTIST 11", genre: "Afro" },
+    { id: "17", name: "ARTIST 11", genre: "Afro" },
+    
+    { id: "19", name: "ARTIST 11", genre: "Afro" },
+    
 
   ];
 

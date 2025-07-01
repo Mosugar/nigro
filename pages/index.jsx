@@ -9,11 +9,11 @@ export default function Home() {
       <main>
         <About />
         <Services />
+        <Package />
         <Tracks />
         <Clips />
         <StudioLife />
         <Artists />
-        <Package />
         <Testimonial />
         <Team />
         <Contact />

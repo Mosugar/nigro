@@ -69,6 +69,11 @@
   .content {
     padding-top: 100px;
   }
+  
+  /* Hide the image on mobile */
+  .right {
+    display: none;
+  }
 }
 @media (max-width: 550px) {
   .left p {
