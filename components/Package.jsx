@@ -7,52 +7,52 @@ const Package = () => {
 
   const services = [
     {
-      id: "PRODUCING",
-      name: "PRODUCING",
-      number: "01",
-      videoUrl: "https://www.youtube.com/embed/iAKam37eHYM?si=maHdEj2InbZYi-_X"
-    },
-    {
-      id: "GHOST_PRODUCTION", 
-      name: "GHOST PRODUCTION",
-      number: "02",
-      videoUrl: "https://www.youtube.com/embed/HYtqFjUIh8Q?si=MfFj-Hnh20_vedha"
-    },
-    {
       id: "RECORDING",
       name: "RECORDING", 
-      number: "03",
+      number: "01",
       videoUrl: "https://www.youtube.com/embed/fWlUmFIdGnA?si=AoUaX3mgeUwhX6Ej"
-    },
-    {
-      id: "VOICE_DUBBING",
-      name: "VOICE DUBBING",
-      number: "04", 
-      videoUrl: "https://www.youtube.com/embed/8uT34tiBPR4?si=BMU1nZ6XIecNtDmk"
     },
     {
       id: "MIXAGE",
       name: "MIXAGE",
-      number: "05",
+      number: "02",
       videoUrl: "https://www.youtube.com/embed/3qLFE-tx5ec?si=6Ok3tAMW1tjdlZL7"
     },
     {
       id: "BEATMAKING",
       name: "BEATMAKING", 
-      number: "06",
+      number: "03",
       videoUrl: "https://www.youtube.com/embed/S6HAWKi81bs?si=SFV8sw9Cr77-65c3"
     },
     {
-      id: "MOVIE_SOUNDTRACKS",
-      name: "MOVIE SOUNDTRACKS",
-      number: "07",
-      videoUrl: "https://www.youtube.com/embed/E_59pKMr5Cs?si=rgxGxe1q2Bfhcj3I"
+      id: "PRODUCING",
+      name: "PRODUCING",
+      number: "04",
+      videoUrl: "https://www.youtube.com/embed/iAKam37eHYM?si=maHdEj2InbZYi-_X"
+    },
+    {
+      id: "GHOST_PRODUCTION", 
+      name: "GHOST PRODUCTION",
+      number: "05",
+      videoUrl: "https://www.youtube.com/embed/HYtqFjUIh8Q?si=MfFj-Hnh20_vedha"
     },
     {
       id: "COMPOSITION", 
       name: "COMPOSITION",
-      number: "08",
+      number: "06",
       videoUrl: "https://www.youtube.com/embed/927oWsK59Zk?si=7clUil03TcO18oMV"
+    },
+    {
+      id: "VOICE_DUBBING",
+      name: "VOICE DUBBING",
+      number: "07", 
+      videoUrl: "https://www.youtube.com/embed/8uT34tiBPR4?si=BMU1nZ6XIecNtDmk"
+    },
+    {
+      id: "MOVIE_SOUNDTRACKS",
+      name: "MOVIE SOUNDTRACKS",
+      number: "08",
+      videoUrl: "https://www.youtube.com/embed/E_59pKMr5Cs?si=rgxGxe1q2Bfhcj3I"
     }
   ];
 
@@ -102,13 +102,13 @@ const Package = () => {
   return (
     <div className={style.content} id="package">
       <div className={style.container}>
+        {/* Section Title - Moved to top */}
+        <div className={style.sectionTitle}>
+          <h2>Notre Expertise</h2>
+        </div>
+
         {/* Main Section */}
         <div className={style.mainSection}>
-          {/* Section Title */}
-          <div className={style.sectionTitle}>
-            <h2>Notre Expertise</h2>
-          </div>
-          
           {/* Left Side - Video with Title */}
           <div className={style.leftSide}>
             <div className={style.titleBadge}>

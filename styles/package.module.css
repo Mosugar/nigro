@@ -19,11 +19,12 @@
   margin-bottom: 80px;
 }
 
-/* Section Title */
+/* Section Title - Centered on desktop */
 .sectionTitle {
   grid-column: 1 / -1;
   text-align: center;
   margin-bottom: 40px;
+  padding-left: 0;
 }
 
 .sectionTitle h2 {
@@ -377,7 +378,7 @@
 
 @media (max-width: 768px) {
   .content {
-    padding: 70px 0;
+    padding: 50px 0;
   }
   
   .container {
@@ -386,38 +387,68 @@
   
   .rightSide {
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
   }
   
   .serviceButton {
     min-width: auto;
-    padding: 15px 18px;
+    padding: 16px 20px;
+    min-height: 55px;
+  }
+  
+  .serviceNumber {
+    font-size: 15px;
+    margin-right: 16px;
+    min-width: 26px;
   }
   
   .serviceName {
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .arrowIcon {
+    width: 30px;
+    height: 30px;
   }
   
   .videoContainer {
-    height: 250px;
+    height: 200px;
     border-radius: 20px;
   }
   
   .titleBadge {
     left: 15px;
-    padding: 10px 20px;
+    padding: 8px 16px;
   }
   
   .titleBadge span {
-    font-size: 12px;
+    font-size: 10px;
   }
   
   .packagesHeading h2 {
     font-size: 2rem;
   }
+  
+  .sectionTitle {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .sectionTitle h2 {
+    font-size: 2.5rem;
+  }
+  
+  .mainSection {
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 480px) {
+  .content {
+    padding: 40px 0;
+  }
+  
   .packagesHeading h2 {
     font-size: 1.8rem;
   }
@@ -446,5 +477,56 @@
   .reserveButton {
     padding: 10px 20px;
     font-size: 11px;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .sectionTitle h2 {
+    font-size: 2rem;
+  }
+  
+  .serviceButton {
+    padding: 14px 18px;
+    min-height: 50px;
+  }
+  
+  .serviceNumber {
+    font-size: 13px;
+    margin-right: 14px;
+    min-width: 24px;
+  }
+  
+  .serviceName {
+    font-size: 13px;
+  }
+  
+  .arrowIcon {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .videoContainer {
+    height: 180px;
+    border-radius: 15px;
+  }
+  
+  .titleBadge {
+    left: 10px;
+    padding: 6px 12px;
+  }
+  
+  .titleBadge span {
+    font-size: 9px;
+  }
+  
+  .mainSection {
+    margin-bottom: 40px;
+  }
+  
+  .rightSide {
+    gap: 6px;
   }
 }
