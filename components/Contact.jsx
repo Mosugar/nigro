@@ -1,4 +1,5 @@
 import style from "@/styles/contact.module.css";
+
 const Contact = () => {
   return (
     <div className={style.content} id="contact">
@@ -9,15 +10,19 @@ const Contact = () => {
           </div>
           <div className={style.description}>
             <p>
-            Nous sommes déterminés à vous offrir un résultat exceptionnel<br /> avec une qualité irréprochable.
+              Nous sommes déterminés à vous offrir un résultat exceptionnel<br /> 
+              avec une qualité irréprochable.
             </p>
           </div>
           <div className={style.btn}>
             <button>
-            <a href="mailto:contact@warddstudio.com">Contactez nous</a>
+              <a href="mailto:contact@warddstudio.com">Contactez nous</a>
             </button>
           </div>
         </div>
+
+        {/* ✅ Add this right_part for the background */}
+        {/* <div className={style.right_part}></div> */}
       </div>
     </div>
   );

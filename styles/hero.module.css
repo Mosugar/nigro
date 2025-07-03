@@ -2,10 +2,10 @@
   width: 100%;
   height: 100svh;
   position: relative;
-  background-color: var(--green);
+  /* background-color: var(--green);
   background: url("../public/images/bg/vol.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .container {
@@ -26,7 +26,7 @@
 
 .textB {
   position: absolute;
-  top: 13%;
+  top:  15%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -51,6 +51,11 @@
   z-index: 10;
 }
 
+@media (max-width: 768px) {
+  .bold a {
+    display: none; /* Adjusted for smaller screens */
+  }
+}
 .bold a button {
   color: var(--green);
   font-size: var(--fz-md);
@@ -103,7 +108,7 @@
 /* Responsive Design */
 @media (max-width: 770px) {
   .textB {
-    top: 15%; /* Moved lower */
+    top: 17%; /* Moved lower */
   }
   
   .bold h1 {
@@ -124,7 +129,8 @@
 
 @media (max-width: 550px) {
   .textB {
-    top: 20%; /* Even lower position */
+    top: 16%; /* Lower for small screens */
+    /* Even lower position */
     width: 90%;
     left: 50%;
     transform: translateX(-50%);
@@ -152,7 +158,6 @@
 
 @media (max-width: 450px) {
   .textB {
-    top: 25%; /* Lower for small screens */
     width: 95%;
   }
   

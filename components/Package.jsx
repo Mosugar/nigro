@@ -1,228 +1,215 @@
-"use client";
-import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useState } from "react";
 import style from "@/styles/package.module.css";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
-gsap.registerPlugin(ScrollTrigger);
-const Package = () => {
-  useEffect(() => {
-    const animation = gsap.fromTo(
-      ".pack__7gv9",
-      {
-        y: "100%",
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: ".slider",
-          start: "5% bottom",
-          end: "bottom center",
-          toggleActions: "restart none none reverse",
-        },
-      }
-    );
 
-    // Return a cleanup function to kill the animation and ScrollTrigger
-    return () => {
-      animation.kill();
-    };
-  }, []);
+const Package = () => {
+  const [activeService, setActiveService] = useState("RECORDING");
+
+  const services = [
+    {
+      id: "PRODUCING",
+      name: "PRODUCING",
+      number: "01",
+      videoUrl: "https://www.youtube.com/embed/iAKam37eHYM?si=maHdEj2InbZYi-_X"
+    },
+    {
+      id: "GHOST_PRODUCTION", 
+      name: "GHOST PRODUCTION",
+      number: "02",
+      videoUrl: "https://www.youtube.com/embed/HYtqFjUIh8Q?si=MfFj-Hnh20_vedha"
+    },
+    {
+      id: "RECORDING",
+      name: "RECORDING", 
+      number: "03",
+      videoUrl: "https://www.youtube.com/embed/fWlUmFIdGnA?si=AoUaX3mgeUwhX6Ej"
+    },
+    {
+      id: "VOICE_DUBBING",
+      name: "VOICE DUBBING",
+      number: "04", 
+      videoUrl: "https://www.youtube.com/embed/8uT34tiBPR4?si=BMU1nZ6XIecNtDmk"
+    },
+    {
+      id: "MIXAGE",
+      name: "MIXAGE",
+      number: "05",
+      videoUrl: "https://www.youtube.com/embed/3qLFE-tx5ec?si=6Ok3tAMW1tjdlZL7"
+    },
+    {
+      id: "BEATMAKING",
+      name: "BEATMAKING", 
+      number: "06",
+      videoUrl: "https://www.youtube.com/embed/S6HAWKi81bs?si=SFV8sw9Cr77-65c3"
+    },
+    {
+      id: "MOVIE_SOUNDTRACKS",
+      name: "MOVIE SOUNDTRACKS",
+      number: "07",
+      videoUrl: "https://www.youtube.com/embed/E_59pKMr5Cs?si=rgxGxe1q2Bfhcj3I"
+    },
+    {
+      id: "COMPOSITION", 
+      name: "COMPOSITION",
+      number: "08",
+      videoUrl: "https://www.youtube.com/embed/927oWsK59Zk?si=7clUil03TcO18oMV"
+    }
+  ];
+
   const packs = [
     {
-      pack: "Pack étudiant",
+      pack: "PACK ÉTUDIANT",
       email: "mailto:contact@warddstudio.com?subject=Pack%20Etudiant",
       features: [
-        {
-          feature: "Enregistrement",
-        },
-        {
-          feature: "Mixage",
-        },
-        {
-          feature: "Mastering",
-        },
-        {
-          feature: "Shooting (Offert)",
-        },
-        {
-          feature: "Contenu vidéo pour réseaux sociaux",
-        },
-      ],
-      price: "700",
-    },
-{
-  pack: "Pack basic",
-  email: "mailto:contact@warddstudio.com?subject=Pack%20Basic",
-  features: [
-    {
-      feature: "Enregistrement",
+        "Enregistrement",
+        "Mixage", 
+        "Mastering",
+        "Shooting (Offert)",
+        "Contenu vidéo pour réseaux sociaux",
+        "Instru non exclusif"
+      ]
     },
     {
-      feature: "Mixage",
+      pack: "PACK PREMIUM", 
+      email: "mailto:contact@warddstudio.com?subject=Pack%20Premium",
+      features: [
+        "Enregistrement",
+        "Mixage",
+        "Mastering",
+        "Shooting (Offert)",
+        "Contenu vidéo pour réseaux sociaux",
+        "Instru non exclusif",
+        "Tuning vocal avancé"
+      ]
     },
     {
-      feature: "Mastering",
-    },
-    {
-      feature: "Shooting (Offert)",
-    },
-    {
-      feature: "Contenu vidéo pour réseaux sociaux",
-      
-    },
-    
-  ],
-  price: "1000",
-},
-    
-{
-  pack: "Pack pro",
-  email: "mailto:contact@warddstudio.com?subject=Pack%20Pro",
-  features: [
-    {
-      feature: "Enregistrement",
-    },
-    {
-      feature: "Mixage",
-    },
-    {
-      feature: "Mastering",
-    },
-    {
-      feature: "Instru non exclusif",
-    },
-    {
-      feature: "Shooting (Offert)",
-    },
-    {
-      feature: "Contenu vidéo pour réseaux sociaux",
-    },
-    
-  ],
-  price: "1500",
-    },
-{
-  pack: "Pack Premium",
-  email: "mailto:contact@warddstudio.com?subject=Pack%20Premium",
-  features: [
-    {
-      feature: "Enregistrement",
-    },
-    {
-      feature: "Mixage",
-    },
-    {
-      feature: "Mastering",      
-    },
-    {
-      feature: "Tuning vocal avancé",
-    },
-    {
-      feature: "Shooting (offert)  ",
-    },
-    {
-      feature: "Contenu vidéo pour réseaux sociaux",
-    },
-    
-  ],
-  price: "2500",
-    },
+      pack: "PACK BASIC",
+      email: "mailto:contact@warddstudio.com?subject=Pack%20Basic", 
+      features: [
+        "Enregistrement",
+        "Mixage",
+        "Mastering",
+        "Shooting (Offert)",
+        "Contenu vidéo pour réseaux sociaux",
+        "Instru non exclusif",
+        "Tuning vocal avancé"
+      ]
+    }
   ];
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1200 },
-      items: 4,
-      slidesToSlide: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1200, min: 800 },
-      items: 2,
-      slidesToSlide: 1,
-    },
-    mobile: {
-      breakpoint: { max: 800, min: 0 },
-      items: 1,
-      slidesToSlide: 1,
-    },
-  };
+
+  const activeServiceData = services.find(service => service.id === activeService);
+
   return (
     <div className={style.content} id="package">
       <div className={style.container}>
-        <div className={style.heading}>
-          <h1>Choisis ton pack</h1>
+        {/* Main Section */}
+        <div className={style.mainSection}>
+          {/* Section Title */}
+          <div className={style.sectionTitle}>
+            <h2>Notre Expertise</h2>
+          </div>
+          
+          {/* Left Side - Video with Title */}
+          <div className={style.leftSide}>
+            <div className={style.titleBadge}>
+              <span>NOTRE EXPERTISE</span>
+            </div>
+            <div className={style.videoContainer}>
+              <div className={style.microphoneIcon}>
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                  <rect x="9" y="2" width="6" height="11" rx="3" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M12 18v3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M8 21h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M19 11a7 7 0 0 1-14 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <iframe
+                width="100%"
+                height="100%"
+                src={activeServiceData?.videoUrl}
+                title="Service video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+          
+          {/* Right Side - Services Menu */}
+          <div className={style.rightSide}>
+            {services.map((service) => (
+              <button
+                key={service.id}
+                className={`${style.serviceButton} ${
+                  activeService === service.id ? style.active : ""
+                }`}
+                onClick={() => setActiveService(service.id)}
+              >
+                <span className={style.serviceNumber}>{service.number}</span>
+                <span className={style.serviceName}>{service.name}</span>
+                <div className={style.arrowIcon}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M7 17L17 7M17 7H7M17 7V17"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="slider">
-          <Carousel
-            responsive={responsive}
-            draggable={true}
-            customTransition="all .5s ease"
-            ssr={true}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-          >
+
+        {/* Packages Section */}
+        <div className={style.packagesSection}>
+          <div className={style.packagesHeading}>
+            <h2>Choisis ton pack</h2>
+          </div>
+          
+          <div className={style.packagesGrid}>
             {packs.map((pack, index) => (
-              <div className={style.inner} key={index}>
-                <div className={`${style.card} pack__7gv9 pack_card__${index + 1}`}>
-                  <div className={style.card_top}>
-                    <div className={style.packname}>
-                      <h1>{pack.pack}</h1>
+              <div key={index} className={style.packageCard}>
+                <div className={style.packageHeader}>
+                  <h3>{pack.pack}</h3>
+                </div>
+                <div className={style.packageFeatures}>
+                  {pack.features.map((feature, idx) => (
+                    <div key={idx} className={style.featureItem}>
+                      <div className={style.checkIcon}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                          <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      <span>{feature}</span>
                     </div>
-                    <div className={style.feature}>
-                      <ul>
-                        {pack.features.map((feature, index) => (
-                          <li key={index}>
-                            <span>◎</span>
-                            {feature.feature}
-                          </li>
-                        ))}
-                      </ul>
+                  ))}
+                </div>
+                <div className={style.packageFooter}>
+                  <a href={pack.email} className={style.reserveButton}>
+                    <span>RÉSERVEZ</span>
+                    <div className={style.buttonArrow}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M7 17L17 7M17 7H7M17 7V17"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </div>
-                  </div>
-                  <div className={style.card_bot}>
-                    {/* <div className={style.price}>
-                      <h1>
-                        {pack.price} <span>DH</span>
-                      </h1>
-                    </div> */}
-                    <div className={style.book}>
-                      <a href={pack.email}>
-                        <button>
-                          <span>réservez </span>
-                        </button>
-                      </a>
-                    </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             ))}
-          </Carousel>
-          {/* <div className={style.arrow}>
-            <Image
-              src={"/icons/arow-green.svg"}
-              alt="arrow"
-              width={200}
-              height={200}
-            />
-          </div> */}
+          </div>
         </div>
       </div>
-      {/* <div className={style.svg_top}>
-        <svg
-          id="Layer_1"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1599 71"
-          fill="var(--dark)"
-        >
-          <polygon points="0 0 1599 0 1599 71 0 0" />
-        </svg>
-      </div> */}
     </div>
   );
 };

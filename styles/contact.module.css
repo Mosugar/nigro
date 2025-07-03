@@ -95,9 +95,11 @@
 .right_part {
   width: 100%;
   height: 65vh;
-  background: url("/images/contact-bg.jpg");
+  background-image: url("/images/contact-bg.jpg");
   background-position: center;
   background-size: cover;
+  position: relative;
+  z-index: 0;
 }
 
 @media (max-width: 800px) {
@@ -108,9 +110,15 @@
     display: flex;
     flex-direction: column;
   }
-  .right_part {
-    order: -1;
-  }
+  
+    .right_part {
+      order: -1;
+      background: url("/images/pic.jpg") center/cover no-repeat !important;
+      position: relative;
+      z-index: 1;
+      height: 100vh; /* ← this fixes it */
+    }
+  
   .left_part {
     padding: 60px;
   }

@@ -24,7 +24,6 @@ const StudioLife = () => {
     { src: "/studiolife/18.JPG", alt: "Studio life" },
     { src: "/studiolife/19.JPG", alt: "Recording equipment" },
     { src: "/studiolife/20.JPG", alt: "Studio ambiance" }
-    
   ];
 
   useEffect(() => {
@@ -93,14 +92,11 @@ const StudioLife = () => {
             >
               <span>Enter IG</span> 
               <div className={style.arrow}>
-                <svg width="80" height="20" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                <svg width="33" height="17" viewBox="0 0 27.41 13.32">
+                  <g>
+                    <rect x="0" y="5.58" width="26.13" height="2.16" rx="1.08" ry="1.08" fill="currentColor"/>
+                    <path d="M26.73,8.14c-1.99,1.65-3.98,3.29-5.97,4.94-.7.58-1.72.05-1.73-.91h0c0-.39.17-.75.47-.97,1.63-1.17,3.27-2.34,4.9-3.51.64-.46.64-1.48,0-1.93l-4.9-3.5c-.3-.21-.48-.58-.48-.97v-.14c0-.96,1.02-1.49,1.73-.91,1.99,1.64,3.98,3.29,5.97,4.93.91.75.91,2.22,0,2.97Z" fill="currentColor"/>
+                  </g>
                 </svg>
               </div>
             </a>

@@ -313,7 +313,7 @@ html {
 }
 body {
   width: 100%;
-  overflow-x: hidden;
+  overflowwww: hidden;
   background-color: var(--light);
   user-select: none;
 }
