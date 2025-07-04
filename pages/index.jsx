@@ -8,7 +8,7 @@ export default function Home() {
       <Hero />
       <main>
         <About />
-        <Services />
+        {/* <Services /> */}
         <Package />
         <Tracks />
         <Clips />

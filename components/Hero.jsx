@@ -44,7 +44,27 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    
+    <div className="hero-background-image">
+      <picture>
+        <source
+          media="(min-width: 768px)"
+          srcSet="/images/bg/vol.jpg"
+          type="image/jpeg"
+        />
+        <source
+          media="(max-width: 767px)"
+          srcSet="/images/rev.jpg"
+          type="image/jpeg"
+        />
+        <Image
+          src="/images/rev.jpg"
+          alt="Hero Background"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+      </picture>
+    </div>
     </div>
   );
 };
