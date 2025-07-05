@@ -26,22 +26,88 @@ const StudioLife = () => {
     { src: "/studiolife/20.JPG", alt: "Studio ambiance" }
   ];
 
+  // Create infinite loop by duplicating images for seamless scroll
+  const createInfiniteColumns = () => {
+    const columns = [[], [], [], []];
+    
+    // Distribute images across 4 columns
+    studioImages.forEach((image, index) => {
+      columns[index % 4].push(image);
+    });
+    
+    // Duplicate each column for infinite scroll
+    return columns.map(column => [...column, ...column, ...column]);
+  };
+
   useEffect(() => {
-    gsap.to(`.${style.column}`, {
-      y: (index) => (index % 2 === 0 ? -80 : 20),
-      duration: 4,
+    // Override the CSS grid layout for infinite scrolling
+    const imageGrid = document.querySelector(`.${style.imageGrid}`);
+    if (imageGrid) {
+      // Change from grid to flex layout for infinite scroll
+      imageGrid.style.display = 'flex';
+      imageGrid.style.flexDirection = 'row';
+      imageGrid.style.gap = '0.8rem';
+      imageGrid.style.alignItems = 'flex-start';
+      imageGrid.style.justifyContent = 'center';
+      imageGrid.style.overflow = 'hidden';
+      imageGrid.style.height = '100vh';
+    }
+
+    const columns = createInfiniteColumns();
+    
+    // Set up each column with proper positioning and animation
+    columns.forEach((columnImages, columnIndex) => {
+      const columnElement = document.querySelector(`.col-${columnIndex}`);
+      if (columnElement) {
+        // Override column styles for infinite scroll
+        columnElement.style.display = 'flex';
+        columnElement.style.flexDirection = 'column';
+        columnElement.style.gap = '0.8rem';
+        columnElement.style.flex = '1';
+        columnElement.style.height = 'auto';
+        columnElement.style.minWidth = '0';
+        
+        gsap.set(columnElement, { y: 0 });
+        
+        // Calculate total height needed for seamless loop
+        const imageHeight = 320; // Approximate height + gap
+        const totalHeight = columnImages.length * imageHeight;
+        const singleSetHeight = totalHeight / 3; // Since we tripled the images
+        
+        gsap.to(columnElement, {
+          y: -singleSetHeight,
+          duration: 25 + (columnIndex * 3), // Stagger timing
+          ease: "none",
+          repeat: -1,
+          repeatDelay: 0
+        });
+      }
+    });
+
+    // Add subtle floating animation to individual cards
+    gsap.to(`.${style.imageCard}`, {
+      rotateY: (index) => (index % 2 === 0 ? 2 : -2),
+      rotateX: (index) => (index % 3 === 0 ? 1 : -1),
+      duration: 6,
       ease: "power2.inOut",
       repeat: -1,
-      yoyo: true
+      yoyo: true,
+      stagger: 0.1
     });
+
+    return () => {
+      gsap.killTweensOf("*");
+    };
   }, []);
+
+  const imageColumns = createInfiniteColumns();
 
   return (
     <>
       <div style={{ background: "#fff", padding: "50px 0" }}></div>
       <div className={style.content} id="studio-life">
         {/* Add SVG gradient at the top - same as bottom sections */}
-        <div className={style.svg_top}>
+        {/* <div className={style.svg_top}>
           <svg
             id="Layer_1"
             data-name="Layer 1"
@@ -51,23 +117,40 @@ const StudioLife = () => {
           >
             <polygon points="0 0 1599 0 1599 71 0 0" />
           </svg>
-        </div>
+        </div> */}
         
         <div className={style.container}>
           <div className={style.imageGrid}>
-            {studioImages.map((image, index) => (
+            {imageColumns.map((column, columnIndex) => (
               <div 
-                key={index}
-                className={`${style.imageCard} ${style.column} ${style[`col${index % 4 + 1}`]}`}
+                key={columnIndex}
+                className={`${style.column} col-${columnIndex}`}
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className={style.studioImage}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                />
-                <div className={style.overlay}></div>
+                {column.map((image, imageIndex) => (
+                  <div 
+                    key={`${columnIndex}-${imageIndex}`}
+                    className={style.imageCard}
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      height: '300px',
+                      borderRadius: '15px',
+                      overflow: 'hidden',
+                      boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+                      cursor: 'pointer',
+                      transition: 'transform 0.4s ease'
+                    }}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className={style.studioImage}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                    <div className={style.overlay}></div>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
