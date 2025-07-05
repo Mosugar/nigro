@@ -30,7 +30,7 @@ const Contact = () => {
         <picture>
           <source
             media="(min-width: 768px)"
-            srcSet="/images/aziz-banner.jpg"
+            srcSet="/images/bg/aziz-banner.jpg"
             type="image/jpeg"
           />
           <source
