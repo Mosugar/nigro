@@ -1,4 +1,5 @@
 import style from "@/styles/contact.module.css";
+import Image from "next/image";
 
 const Contact = () => {
   return (
@@ -10,7 +11,8 @@ const Contact = () => {
           </div>
           <div className={style.description}>
             <p>
-              Nous sommes déterminés à vous offrir un résultat exceptionnel<br /> 
+              Nous sommes déterminés à vous offrir un résultat exceptionnel
+              <br />
               avec une qualité irréprochable.
             </p>
           </div>
@@ -23,6 +25,27 @@ const Contact = () => {
 
         {/* ✅ Add this right_part for the background */}
         {/* <div className={style.right_part}></div> */}
+      </div>
+      <div className={style.hero_background_image}>
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcSet="/images/aziz-banner.jpg"
+            type="image/jpeg"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcSet="/images/pic.jpg"
+            type="image/jpeg"
+          />
+          <Image
+            src="/images/pic.jpg"
+            alt="Hero Background"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </picture>
       </div>
     </div>
   );

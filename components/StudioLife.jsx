@@ -1,9 +1,33 @@
 import style from "@/styles/studiolife.module.css";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 
+// Custom hook to detect desktop
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    // Check on mount
+    checkIsDesktop();
+
+    // Add event listener for resize
+    window.addEventListener('resize', checkIsDesktop);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  return isDesktop;
+};
+
 const StudioLife = () => {
+  const isDesktop = useIsDesktop();
+
   const studioImages = [
     { src: "/studiolife/2.JPG", alt: "Artist in vocal booth" },
     { src: "/studiolife/3.JPG", alt: "Mixing console" },
@@ -40,6 +64,9 @@ const StudioLife = () => {
   };
 
   useEffect(() => {
+    // Only run animations on desktop
+    if (!isDesktop) return;
+
     // Override the CSS grid layout for infinite scrolling
     const imageGrid = document.querySelector(`.${style.imageGrid}`);
     if (imageGrid) {
@@ -98,7 +125,12 @@ const StudioLife = () => {
     return () => {
       gsap.killTweensOf("*");
     };
-  }, []);
+  }, [isDesktop]);
+
+  // Return null for mobile/tablet devices
+  if (!isDesktop) {
+    return null;
+  }
 
   const imageColumns = createInfiniteColumns();
 

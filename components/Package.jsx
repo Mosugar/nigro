@@ -110,7 +110,7 @@ const Package = () => {
         {/* Main Section */}
         <div className={style.mainSection}>
           {/* Left Side - Video with Title */}
-          <div className={style.leftSide}>
+          {/* <div className={style.leftSide}>
             <div className={style.titleBadge}>
               <span>NOTRE EXPERTISE</span>
             </div>
@@ -134,7 +134,7 @@ const Package = () => {
                 allowFullScreen
               ></iframe>
             </div>
-          </div>
+          </div> */}
           
           {/* Right Side - Services Menu */}
           <div className={style.rightSide}>

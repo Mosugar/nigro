@@ -1,6 +1,6 @@
 .content {
     width: 100%;
-    padding: 100px 0;
+    padding: 50px 0;
     background-color: var(--dark);
     position: relative;
     overflow: hidden;
@@ -144,9 +144,15 @@
     }
   }
   
+  @media (max-width: 768px) {
+    .content {
+      margin-top: 60px;
+    }
+  }
+  
   @media (max-width: 600px) {
     .content {
-      height: 100vh;
+      height: 80vh;
       padding: 0;
       display: flex;
       align-items: center;

@@ -14,7 +14,7 @@
 /* Main Section */
 .mainSection {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr;
   gap: 30px;
   margin-bottom: 80px;
 }
@@ -329,7 +329,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .mainSection {
-    grid-template-columns: 1fr 350px;
+    grid-template-columns: 1fr;
     gap: 25px;
   }
   
