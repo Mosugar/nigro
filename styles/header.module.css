@@ -228,12 +228,12 @@
 }
 @media (max-width: 600px) {
   .logo {
-    top: 37px;
-    left: 35px;
+    top: 25px;
+    left: 30px;
   }
   .hamburger {
-    top: 42px;
-    right: 35px;
+    top: 30px;
+    right: 30px;
   }
   .links li a {
     font-size: 2.4rem;

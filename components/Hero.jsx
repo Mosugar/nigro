@@ -26,14 +26,18 @@ const Hero = () => {
       <div className={style.container}>
         <div className={style.bold}>
           <div className={style.textB}>
-          <h1>
+            <h1>
               Vis ta passion avec
               <br />
               Wardd Music
             </h1>
           </div>
           <div className={style.description}>
-            <p>Découvrez Wardd Music, le studio d'enregistrement, production qui vous donnera la liberté de création et une qualité de production fidèle à notre passion.</p>
+            <p>
+              Découvrez Wardd Music, le studio d'enregistrement, production qui
+              vous donnera la liberté de création et une qualité de production
+              fidèle à notre passion.
+            </p>
           </div>
           <div className="overflow-hidden">
             <a href="#about" className="ov-g5e4">
@@ -44,27 +48,27 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    <div className="hero-background-image">
-      <picture>
-        <source
-          media="(min-width: 768px)"
-          srcSet="/images/bg/vol.jpg"
-          type="image/jpeg"
-        />
-        <source
-          media="(max-width: 767px)"
-          srcSet="/images/rev.jpg"
-          type="image/jpeg"
-        />
-        <Image
-          src="/images/rev.jpg"
-          alt="Hero Background"
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
-      </picture>
-    </div>
+      <div className="hero-background-image">
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcSet="/images/bg/vol.jpg"
+            type="image/jpeg"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcSet="/images/rev.jpg"
+            type="image/jpeg"
+          />
+          <Image
+            src="/images/rev.jpg"
+            alt="Hero Background"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </picture>
+      </div>
     </div>
   );
 };

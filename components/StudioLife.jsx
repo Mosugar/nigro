@@ -23,16 +23,16 @@ const StudioLife = () => {
     { src: "/studiolife/17.JPG", alt: "Creative process" },
     { src: "/studiolife/18.JPG", alt: "Studio life" },
     { src: "/studiolife/19.JPG", alt: "Recording equipment" },
-    { src: "/studiolife/20.JPG", alt: "Studio ambiance" },
+    { src: "/studiolife/20.JPG", alt: "Studio ambiance" }
   ];
 
   useEffect(() => {
     gsap.to(`.${style.column}`, {
-      y: (index) => (index % 2 === 0 ? "-80%" : 20),
+      y: (index) => (index % 2 === 0 ? -80 : 20),
       duration: 4,
       ease: "power2.inOut",
       repeat: -1,
-      yoyo: true,
+      yoyo: true
     });
   }, []);
 
@@ -52,15 +52,13 @@ const StudioLife = () => {
             <polygon points="0 0 1599 0 1599 71 0 0" />
           </svg>
         </div>
-
+        
         <div className={style.container}>
           <div className={style.imageGrid}>
             {studioImages.map((image, index) => (
-              <div
+              <div 
                 key={index}
-                className={`${style.imageCard} ${style.column} ${
-                  style[`col${(index % 4) + 1}`]
-                }`}
+                className={`${style.imageCard} ${style.column} ${style[`col${index % 4 + 1}`]}`}
               >
                 <Image
                   src={image.src}
@@ -73,7 +71,7 @@ const StudioLife = () => {
               </div>
             ))}
           </div>
-
+          
           <div className={style.textContainer}>
             <div className={style.textContent}>
               <div className={style.bottomRow}>
@@ -85,30 +83,19 @@ const StudioLife = () => {
                 </div>
               </div>
             </div>
-
-            <a
-              href="https://www.instagram.com/warddmusic_/"
-              target="_blank"
+            
+            <a 
+              href="https://www.instagram.com/warddmusic_/" 
+              target="_blank" 
               rel="noopener noreferrer"
               className={style.bottomButton}
             >
-              <span>Enter IG</span>
+              <span>Enter IG</span> 
               <div className={style.arrow}>
                 <svg width="33" height="17" viewBox="0 0 27.41 13.32">
                   <g>
-                    <rect
-                      x="0"
-                      y="5.58"
-                      width="26.13"
-                      height="2.16"
-                      rx="1.08"
-                      ry="1.08"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M26.73,8.14c-1.99,1.65-3.98,3.29-5.97,4.94-.7.58-1.72.05-1.73-.91h0c0-.39.17-.75.47-.97,1.63-1.17,3.27-2.34,4.9-3.51.64-.46.64-1.48,0-1.93l-4.9-3.5c-.3-.21-.48-.58-.48-.97v-.14c0-.96,1.02-1.49,1.73-.91,1.99,1.64,3.98,3.29,5.97,4.93.91.75.91,2.22,0,2.97Z"
-                      fill="currentColor"
-                    />
+                    <rect x="0" y="5.58" width="26.13" height="2.16" rx="1.08" ry="1.08" fill="currentColor"/>
+                    <path d="M26.73,8.14c-1.99,1.65-3.98,3.29-5.97,4.94-.7.58-1.72.05-1.73-.91h0c0-.39.17-.75.47-.97,1.63-1.17,3.27-2.34,4.9-3.51.64-.46.64-1.48,0-1.93l-4.9-3.5c-.3-.21-.48-.58-.48-.97v-.14c0-.96,1.02-1.49,1.73-.91,1.99,1.64,3.98,3.29,5.97,4.93.91.75.91,2.22,0,2.97Z" fill="currentColor"/>
                   </g>
                 </svg>
               </div>
